@@ -1,0 +1,19 @@
+inicio
+importar bibliotecas
+definição da função
+definir xl e xu
+definir eppara (incluindo o numero de algarismos siginificativos (n))
+alocar valores para as variaveis
+definir o 'enquanto' (Epest >= Eppara) - faça
+    d = (ø-1)*(xu-xl)
+    x1 = xl+d
+    x2 = xu-d
+
+    se f(x1) < f(x2):
+        xl = x2
+        Xopt = x1
+    senão
+        Xopt = x2
+        xu = x1
+    Epest = (2-ø)*((xu-xl)/Xotm)*100
+FIM
