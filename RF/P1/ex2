@@ -1,0 +1,26 @@
+import numpy as np
+import math
+
+x = 0.3*np.pi
+n=8
+eppara = 0.5 * 10 ** (2 - n)
+
+x_old = 0
+x_new = 0
+termos = 0 
+epest = 100
+
+while epest >= eppara:
+    termo = ((-1)*termos) * (x**(2*termos)) / math.factorial(2*termos)
+    x_old = x_new
+    x_new += termo
+    termos += 1
+
+    if termos > 1:
+        epest = abs ((x_new - x_old) / x_new) *100
+
+print("Aproximação:", x_new)
+print("Cos(x) real:", np.cos(x))
+print("Número de termos:", termos)
+print("Epest:", epest)
+print("Eppara:", eppara)
