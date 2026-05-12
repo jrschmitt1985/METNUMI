@@ -18,26 +18,10 @@ Xnew = np.array(([],
                  [],
                  []))
 
-Eppara
+Epest = (abs(Xold-Xnew)/Xold)*100
 
-Epest = |Xold-
+Eppara = 0.5 * (10**(2-6))
 
-whyle
-
-for i in range(n-1):
-    for j in range(i+1,n):
-        fator = Aum[j,i] / Aum[i,i]
-        Aum[j,i:n+1] = Aum[j,i:n+1] - fator*Aum[i,i:n+1]
-
-# Substituição Progressiva
-x = np.zeros(n)
-
-x[n-1] = Aum[n-1,n]/Aum[n-1,n-1]
-
-for i in range(n-2, -1, -1):
-    soma = 0
-    for j in range(i+1,n):
-        soma += Aum[i,j]*x[j]
-    x[i] = (Aum[i,n] - soma) / Aum[i,i]
-
-print(x)
+while max(Epest >= Eppara):
+    if j < i: 
+     a{i,j} * kj - if j>i aij * k-ij)
