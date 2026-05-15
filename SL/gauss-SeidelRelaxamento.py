@@ -2,9 +2,9 @@ import numpy as np
 
 A = np.array([[2,4,-6],
                [4,2,2],
-               [-4,8,2]])
+               [2,8,-4]])
 
-b = np.array([10,16,24])
+b = np.array([10, 16, 24])
 
 n = len(b)
 
@@ -13,6 +13,10 @@ Eppara = 0.5*10**(2-na)
 
 ##chute inicial
 x_old = np.ones(n)
+
+##Relaxamento
+
+relax = 0.5
 
 # alocação de memória
 
@@ -37,9 +41,12 @@ while (np.max(Epest) > Eppara):
 
         x_new[i] = 1/A[i,i]*(b[i] - soma1 - soma2)
 
+        x_new = relax*x_new + (1 - relax) * x_old
+
     Epest = np.abs((x_new - x_old)/x_new)*100
 
     x_old = x_new.copy()
     k += 1
     print(k)
 print(x_new.copy())
+
