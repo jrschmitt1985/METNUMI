@@ -19,7 +19,7 @@ def df2_dx2(x1,x2):
     return 1 + 5*x1
 
 
-x_old = np.array([1.5, 3.5])
+x_old = np.array([1.5, 0.5])
 
 print("Valores iniciais: ", x_old)
 
@@ -49,5 +49,5 @@ while np.max(epest) >= eppara:
     x_old = x_new.copy()
 
 
-print("Solução: ", x_new)
-print("Iterações: ", iteracoes)
+print(f"Solução: ({x_new[0]:.6f}, {x_new[1]:.6f})")
+print("Iterações:", iteracoes)
