@@ -1,0 +1,30 @@
+CHAPRA, S. C.; CANALE, R. P. Numerical Methods for Engineers. 6. ed. McGraw-Hill, 2010. Cap. 12, Problema 12.6, p. 327.
+
+Figure P12.6
+Three reactors linked by
+pipes. The rate of mass transfer
+through each pipe is equal to
+the product of flow Q and
+concentration c of the reactor
+from which the flow originates.
+
+Três reatores conectados por tubulações.
+A taxa de transferência de massa através 
+de cada tubulação é igual ao produto da 
+vazão Q pela concentração c do reator 
+de onde o fluxo se origina.
+
+
+12.6 Figure P12.6 shows three reactors linked by pipes. As indi-cated, the rate of transfer of 
+chemicals through each pipe is equal to a flow rate (O, with units of cubic meters per second)
+ multiplied by the concentration of the reactor from which the flow originates (c, with units of 
+ milligrams per cubic meter). If the system is at a steady state, the transfer into each reactor 
+ will balance the transfer out. Develop mass-balance equations for the reactors and solve the three 
+ simultaneous linear algebraic equations for their concentrations.
+
+12.6 A Figura P12.6 mostra três reatores ligados por tubos. Conforme indicado, a taxa de transferência
+ de produtos químicos através de cada tubo é igual a uma taxa de fluxo (O, com unidades de metros cúbicos 
+ por segundo) multiplicada pela concentração do reator do qual o fluxo se origina (c, com unidades de 
+ miligramas por metro cúbico). Se o sistema estiver em um estado estável, a transferência para cada 
+ reator equilibrará a transferência. Desenvolva equações de balanço de massa para os reatores e resolva 
+ as três equações algébricas lineares simultâneas para suas concentrações.
