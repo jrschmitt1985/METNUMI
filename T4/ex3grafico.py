@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter
 
 x=np.linspace(-2, 2, 1000)
 
@@ -19,4 +20,11 @@ plt.grid()
 plt.legend()
 plt.xlim(-2, 2)
 plt.ylim(-2, 2)
+
+formatter = FuncFormatter(lambda x, pos: f'{x:.1f}'.replace('.', ','))
+
+ax = plt.gca()
+ax.xaxis.set_major_formatter(formatter)
+ax.yaxis.set_major_formatter(formatter)
+
 plt.show()      
