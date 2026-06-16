@@ -1,18 +1,16 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import math
 import pandas as pd
 
 # dados de entrada
 date = {
-    'x': [10, 20, 30, 40, 50, 60, 70, 80],
-    'y': [28, 70, 380, 550, 610, 1220, 830, 1450]
+    'x': [0.4, 0.8, 1.2, 1.6, 2, 2.6],
+    'y': np.log([800, 985, 1490, 1950, 2850, 3600])
 }
 
 df = pd.DataFrame(date)
 
-df['x'] = np.log10(df['x'])
-df['y'] = np.log10(df['y'])
+##df['y'] = np.log(df['y'])
 
 # calculos
 n = len(df['x'])

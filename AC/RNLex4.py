@@ -5,13 +5,14 @@ import pandas as pd
 
 # dados de entrada
 date = {
-    'x': [0.4, 0.8, 1.2, 1.6, 2, 2.6],
-    'y': np.log([800, 985, 1490, 1950, 2850, 3600])
+    'x': [10, 20, 30, 40, 50, 60, 70, 80],
+    'y': [28, 70, 380, 550, 610, 1220, 830, 1450]
 }
 
 df = pd.DataFrame(date)
 
-##df['y'] = np.log(df['y'])
+df['x'] = np.log10(df['x'])
+df['y'] = np.log10(df['y'])
 
 # calculos
 n = len(df['x'])
