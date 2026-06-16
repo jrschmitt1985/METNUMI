@@ -57,4 +57,8 @@ ax = plt.gca()
 ax.xaxis.set_major_formatter(formatter)
 ax.yaxis.set_major_formatter(formatter)
 
+plt.scatter(x, y, color='red', label="Dados")
+plt.plot(x_grafico, y_pot_grafico, color='blue', linewidth=1)
+
+
 plt.show()

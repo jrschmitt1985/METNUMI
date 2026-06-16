@@ -29,7 +29,7 @@ print(f"Coeficiente de determinação R² = {r2_cubica:.6f}")
 
 # Gráfico
 x_grafico = np.linspace(min(x), max(x), 200)
-y_cubica_grafico = np.polyval(coef3, x_grafico)
+y_cubica_grafico = np.polyval(coef3, x_grafico) 
 
 plt.scatter(x, y, label="Dados")
 plt.plot(x_grafico, y_cubica_grafico, label="Ajuste cúbico")
@@ -45,7 +45,9 @@ formatter = FuncFormatter(lambda x, pos: f'{x:.2f}'.replace('.', ','))
 ax = plt.gca()
 ax.xaxis.set_major_formatter(formatter)
 ax.yaxis.set_major_formatter(formatter)
+plt.scatter(x, y, color='red', label="Dados")
+plt.plot(x_grafico, y_cubica_grafico, color='blue', linewidth=1)
 
-plt.axhline(y=0, color='black', linewidth=1.5)
+
 
 plt.show()

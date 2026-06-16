@@ -1,6 +1,7 @@
 import numpy as np
 import math
 import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter
 
 x = np.array([1.0, 2.0, 2.5, 3.0, 4.0, 5.0])
 y = np.array([0.0, 5.0, 6.5, 7.0, 3.0, 1.0])
@@ -21,6 +22,8 @@ def newton(xvalor):
     return resultado
 
 xplot = np.linspace(1, 5, 500)
+formatter = FuncFormatter(lambda x, pos: f'{x:.2f}'.replace('.', ','))
+
 plt.figure(figsize=(10, 6))
 plt.plot(xplot, [newton(xp) for xp in xplot], 'b-', label='Grau 5')
 plt.plot(x, y, 'ro', label='Pontos dados')

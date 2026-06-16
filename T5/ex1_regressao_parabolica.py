@@ -46,6 +46,7 @@ ax = plt.gca()
 ax.xaxis.set_major_formatter(formatter)
 ax.yaxis.set_major_formatter(formatter)
 
-plt.axhline(y=0, color='black', linewidth=1.5)
+plt.scatter(x, y, color='red', label="Dados")
+plt.plot(x_grafico, y_parabola_grafico, color='blue', linewidth=1)
 
 plt.show()

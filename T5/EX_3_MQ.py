@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter
 
 x = np.array([0.0, 1.8, 5.0, 6.0, 8.2, 9.2, 12.0])
 y = np.array([26.000, 16.415, 5.375, 3.500, 2.015, 2.540, 8.000])
@@ -17,16 +18,25 @@ def polinomio(xvalor):
     return sum(ai[i] * xvalor**i for i in range(grau))
 
 xplot = np.linspace(0, 12, 500)
+formatter = FuncFormatter(lambda x, pos: f'{x:.2f}'.replace('.', ','))
 
 plt.figure(figsize=(10, 6))
 plt.plot(xplot, [polinomio(xi) for xi in xplot], 'b-', label='Mínimos Quadrados')
 plt.plot(x, y, 'ro', label='Pontos dados')
-plt.scatter(3.5, polinomio(3.5), color='black', s=50, label=f'f(3.5) = {polinomio(3.5):.4f}')
+plt.scatter(3.5, polinomio(3.5), color='black', s=50,
+            label=f'f(3,5) = {polinomio(3.5):.6f}'.replace('.', ','))
+
 plt.xlabel('x')
 plt.ylabel('y')
 plt.title('Mínimos Quadrados Grau')
 plt.legend()
 plt.grid(True)
+
+
+ax = plt.gca()
+ax.xaxis.set_major_formatter(formatter)
+ax.yaxis.set_major_formatter(formatter)
+
 plt.show()
 
 print(f"f(3.5) = {polinomio(3.5)}")
