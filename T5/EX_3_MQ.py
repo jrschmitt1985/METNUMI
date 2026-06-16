@@ -8,13 +8,13 @@ n = len(x)
 grau = 6
 
 
-A = np.array([[np.sum(x**(i+j)) for j in range(grau+1)] for i in range(grau+1)])
-b = np.array([np.sum(y * x**i) for i in range(grau+1)])
+A = np.array([[np.sum(x**(i+j)) for j in range(grau)] for i in range(grau)])
+b = np.array([np.sum(y * x**i) for i in range(grau)])
 
 ai = np.linalg.solve(A, b)
 
 def polinomio(xvalor):
-    return sum(ai[i] * xvalor**i for i in range(grau+1))
+    return sum(ai[i] * xvalor**i for i in range(grau))
 
 xplot = np.linspace(0, 12, 500)
 

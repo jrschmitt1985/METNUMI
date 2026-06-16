@@ -2,8 +2,8 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 
-x = np.array([0.0, 1.8, 5.0, 6.0, 8.2, 9.2, 12.0])
-y = np.array([26.000, 16.415, 5.375, 3.500, 2.015, 2.540, 8.000])
+x = np.array([1.0, 2.0, 2.5, 3.0, 4.0, 5.0])
+y = np.array([0.0, 5.0, 6.5, 7.0, 3.0, 1.0])
 
 n = len(x)
 
@@ -14,10 +14,10 @@ def lagrange(xvalor):
         resultado += Li * y[i]
     return resultado
 
-xvalor = 3.5
+xvalor = 3.4
 resultado = lagrange(xvalor)
 
-xplot = np.linspace(0, 12, 500)
+xplot = np.linspace(1, 5, 100)
 yplot = [lagrange(xi) for xi in xplot]
 
 plt.figure(figsize=(10, 6))
