@@ -27,10 +27,19 @@ formatter = FuncFormatter(lambda x, pos: f'{x:.2f}'.replace('.', ','))
 plt.figure(figsize=(10, 6))
 plt.plot(xplot, [newton(xp) for xp in xplot], 'b-', label='Grau 5')
 plt.plot(x, y, 'ro', label='Pontos dados')
-plt.scatter(3.4, newton(3.4), color='black', s=50, label=f'f(3.4) = {newton(3.4):.4f}')
+
+valor = newton(3.4)
+
+legenda = f"f(3,4) = {valor:.6f}".replace('.', ',')
+
+plt.scatter(3.4, valor,
+            color='black',
+            s=50,
+            label=legenda)
+
 plt.xlabel('x')
 plt.ylabel('y')
-plt.title('Newton Grau 3')
+plt.title('Newton Grau 5')
 plt.legend()
 plt.grid(True)
 plt.show()

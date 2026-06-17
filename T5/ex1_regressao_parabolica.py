@@ -31,8 +31,11 @@ print(f"Coeficiente de determinação R² = {r2_parabola:.6f}")
 x_grafico = np.linspace(min(x), max(x), 200)
 y_parabola_grafico = np.polyval(coef2, x_grafico)
 
-plt.scatter(x, y, label="Dados")
-plt.plot(x_grafico, y_parabola_grafico, label="Ajuste parabólico")
+plt.scatter(x, y, color='red', label="Dados")
+plt.plot(x_grafico, y_parabola_grafico,
+         color='blue',
+         linewidth=1.5,
+         label="Ajuste parabólico")
 
 plt.xlabel("x")
 plt.ylabel("y")
@@ -45,8 +48,5 @@ formatter = FuncFormatter(lambda x, pos: f'{x:.2f}'.replace('.', ','))
 ax = plt.gca()
 ax.xaxis.set_major_formatter(formatter)
 ax.yaxis.set_major_formatter(formatter)
-
-plt.scatter(x, y, color='red', label="Dados")
-plt.plot(x_grafico, y_parabola_grafico, color='blue', linewidth=1)
 
 plt.show()

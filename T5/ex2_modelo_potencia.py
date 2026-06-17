@@ -42,12 +42,19 @@ print(f"Coeficiente de determinação R² = {r2_pot:.6f}")
 x_grafico = np.linspace(min(x), max(x), 300)
 y_pot_grafico = a_pot * x_grafico ** b_pot
 
-plt.scatter(x, y, label="Dados")
-plt.plot(x_grafico, y_pot_grafico, label="Modelo potência simples")
+plt.scatter(x, y,
+            color='red',
+            label="Dados")
+
+plt.plot(x_grafico, y_pot_grafico,
+         color='blue',
+         linewidth=1.5,
+         label="Modelo potência simples")
 
 plt.xlabel("Taxa de deformação de cisalhamento, 1/s")
 plt.ylabel("Tensão de cisalhamento, N/m²")
 plt.title("Modelo Potência Simples - Problema 20.56")
+
 plt.grid()
 plt.legend()
 
@@ -56,9 +63,5 @@ formatter = FuncFormatter(lambda x, pos: f'{x:.2f}'.replace('.', ','))
 ax = plt.gca()
 ax.xaxis.set_major_formatter(formatter)
 ax.yaxis.set_major_formatter(formatter)
-
-plt.scatter(x, y, color='red', label="Dados")
-plt.plot(x_grafico, y_pot_grafico, color='blue', linewidth=1)
-
 
 plt.show()

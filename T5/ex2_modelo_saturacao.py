@@ -46,12 +46,19 @@ print(f"Coeficiente de determinação R² = {r2_sat:.6f}")
 x_grafico = np.linspace(min(x), max(x), 300)
 y_sat_grafico = (a_sat * x_grafico) / (b_sat + x_grafico)
 
-plt.scatter(x, y, label="Dados")
-plt.plot(x_grafico, y_sat_grafico, label="Modelo de crescimento da saturação")
+plt.scatter(x, y,
+            color='red',
+            label="Dados")
+
+plt.plot(x_grafico, y_sat_grafico,
+         color='blue',
+         linewidth=1.5,
+         label="Modelo de crescimento da saturação")
 
 plt.xlabel("Taxa de deformação de cisalhamento, 1/s")
 plt.ylabel("Tensão de cisalhamento, N/m²")
 plt.title("Modelo de Crescimento da Saturação - Problema 20.56")
+
 plt.grid()
 plt.legend()
 

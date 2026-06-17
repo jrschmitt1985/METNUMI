@@ -34,12 +34,19 @@ print(f"Coeficiente de determinação R² = {r2_par:.6f}")
 x_grafico = np.linspace(min(x), max(x), 300)
 y_par_grafico = np.polyval(coef_par, x_grafico)
 
-plt.scatter(x, y, label="Dados")
-plt.plot(x_grafico, y_par_grafico, label="Modelo parabólico")
+plt.scatter(x, y,
+            color='red',
+            label="Dados")
+
+plt.plot(x_grafico, y_par_grafico,
+         color='blue',
+         linewidth=1.5,
+         label="Modelo parabólico")
 
 plt.xlabel("Taxa de deformação de cisalhamento, 1/s")
 plt.ylabel("Tensão de cisalhamento, N/m²")
 plt.title("Modelo Parabólico - Problema 20.56")
+
 plt.grid()
 plt.legend()
 

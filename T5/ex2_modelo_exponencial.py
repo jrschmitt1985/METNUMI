@@ -41,12 +41,19 @@ print(f"Coeficiente de determinação R² = {r2_exp:.6f}")
 x_grafico = np.linspace(min(x), max(x), 300)
 y_exp_grafico = a_exp * np.exp(b_exp * x_grafico)
 
-plt.scatter(x, y, label="Dados")
-plt.plot(x_grafico, y_exp_grafico, label="Modelo exponencial")
+plt.scatter(x, y,
+            color='red',
+            label="Dados")
+
+plt.plot(x_grafico, y_exp_grafico,
+         color='blue',
+         linewidth=1.5,
+         label="Modelo exponencial")
 
 plt.xlabel("Taxa de deformação de cisalhamento, 1/s")
 plt.ylabel("Tensão de cisalhamento, N/m²")
 plt.title("Modelo Exponencial - Problema 20.56")
+
 plt.grid()
 plt.legend()
 

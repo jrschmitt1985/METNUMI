@@ -34,7 +34,7 @@ plt.scatter(
     newton(3.4),
     color='black',
     s=50,
-    label=f'f(3,4) = {newton(3.4):.6}'.replace('.', ',')
+    label=f'f(3,4) = {newton(3.4):.6f}'.replace('.', ',')
 )
 
 plt.xlabel('x')

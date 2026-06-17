@@ -41,13 +41,13 @@ print(f"Coeficiente de correlação r = {r:.6f}")
 x_grafico = np.linspace(min(x), max(x), 200)
 y_linear_grafico = a0 + a1 * x_grafico
 
-plt.scatter(x, y, label="Dados")
-plt.plot(x_grafico, y_linear_grafico, label="Ajuste linear")
+plt.scatter(x, y, color='red', label="Dados")
+plt.plot(x_grafico, y_linear_grafico, color='blue', linewidth=1.5, label="Ajuste linear")
 
 plt.xlabel("x")
 plt.ylabel("y")
 plt.title("Ajuste Linear - Problema 1")
-
+plt.grid()
 plt.legend()
 
 formatter = FuncFormatter(lambda x, pos: f'{x:.2f}'.replace('.', ','))
@@ -56,10 +56,4 @@ ax = plt.gca()
 ax.xaxis.set_major_formatter(formatter)
 ax.yaxis.set_major_formatter(formatter)
 
-
-plt.plot(x_grafico, y_linear_grafico, color='blue', linewidth=1)
-
-plt.scatter(x, y, color='red', label="Dados")
-
-plt.grid()
 plt.show()
