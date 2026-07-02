@@ -27,4 +27,9 @@ for i in range (n-2, -1, -1):
         soma += Aum[i,j]*x[j]
     x[i] = (Aum[i,n] - soma)/Aum[i,i]
 
-print(x)
+print("A resposta da número a é: ", x[0], x[1], x[2])
+
+print("A resposta da número b é: ",
+       x[0]*10 + x[1]*2 - x[2], "|" ,
+       -x[0]*3 - x[1]*5 + x[2]*2, "|" ,
+        x[0] + x[1] + x[2]*6)
