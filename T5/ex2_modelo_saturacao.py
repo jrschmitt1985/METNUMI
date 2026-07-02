@@ -2,23 +2,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 
-# Dados do problema 20.56 - Chapra
-# x = taxa de deformação de cisalhamento
-# y = tensão de cisalhamento
-
 x = np.array([50, 70, 90, 110, 130], dtype=float)
 y = np.array([6.01, 7.48, 8.59, 9.19, 10.21], dtype=float)
 
 n = len(x)
 
-# Soma total dos quadrados
 st = np.sum((y - np.mean(y)) ** 2)
-
-# Modelo de taxa de crescimento da saturação
-# y = a*x / (b + x)
-#
-# Linearização:
-# 1/y = (b/a)*(1/x) + 1/a
 
 X_sat = 1 / x
 Y_sat = 1 / y
@@ -40,8 +29,6 @@ print("MODELO DE TAXA DE CRESCIMENTO DA SATURAÇÃO")
 print(f"Equação: y = ({a_sat:.6f}x) / ({b_sat:.6f} + x)")
 print(f"Erro padrão da estimativa = {syx_sat:.6f}")
 print(f"Coeficiente de determinação R² = {r2_sat:.6f}")
-
-# Gráfico
 
 x_grafico = np.linspace(min(x), max(x), 300)
 y_sat_grafico = (a_sat * x_grafico) / (b_sat + x_grafico)

@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 
-# Dados do problema
+
 x = np.array([0.00, 0.25, 0.50, 0.75, 1.00, 1.25, 1.50, 1.75, 
               2.00, 2.25, 2.50, 2.75, 3.00, 3.25, 3.50])
 
@@ -11,10 +11,10 @@ y = np.array([-8.00, -6.50, -2.30, -0.50, -0.20, 0.05, 0.10, 0.30,
 
 n = len(x)
 
-# Soma total dos quadrados
+
 st = np.sum((y - np.mean(y)) ** 2)
 
-# Ajuste polinomial grau 3
+
 coef3 = np.polyfit(x, y, 3)
 y_cubica = np.polyval(coef3, x)
 
@@ -27,7 +27,6 @@ print(f"Equação: y = {coef3[0]:.6f}x³ + {coef3[1]:.6f}x² + {coef3[2]:.6f}x +
 print(f"Erro padrão da estimativa = {syx_cubica:.6f}")
 print(f"Coeficiente de determinação R² = {r2_cubica:.6f}")
 
-# Gráfico
 x_grafico = np.linspace(min(x), max(x), 200)
 y_cubica_grafico = np.polyval(coef3, x_grafico)
 

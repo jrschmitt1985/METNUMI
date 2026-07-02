@@ -2,21 +2,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 
-# Dados do problema 20.56 - Chapra
-# x = taxa de deformação de cisalhamento
-# y = tensão de cisalhamento
 
 x = np.array([50, 70, 90, 110, 130], dtype=float)
 y = np.array([6.01, 7.48, 8.59, 9.19, 10.21], dtype=float)
 
 n = len(x)
 
-# Soma total dos quadrados
 st = np.sum((y - np.mean(y)) ** 2)
 
-# Modelo potência simples
-# y = a * x^b
-# ln(y) = ln(a) + b*ln(x)
 
 ln_x = np.log(x)
 ln_y = np.log(y)
@@ -37,7 +30,6 @@ print(f"Equação: y = {a_pot:.6f} * x^{b_pot:.6f}")
 print(f"Erro padrão da estimativa = {syx_pot:.6f}")
 print(f"Coeficiente de determinação R² = {r2_pot:.6f}")
 
-# Gráfico
 
 x_grafico = np.linspace(min(x), max(x), 300)
 y_pot_grafico = a_pot * x_grafico ** b_pot
