@@ -1,10 +1,10 @@
 import numpy as np
 
-A = np.array([[2, 4, -6],
-              [4, 2, 2],
-              [2, 8, -4]])
+A = np.array([[0.8 , -0.4, 0],
+              [-0.4, 0.8, -0.4],
+              [0, -0.4, 0.8]])
 
-b = np.array([10, 16, 24])
+b = np.array([41, 25, 105])
 
 n = len(b)
 
@@ -18,7 +18,7 @@ x_old = np.ones(n)
 k = 0
 x_new = np.zeros(n)
 Epest = np.linspace(100,100,n)
-
+maxit = 100
 
 while (np.max(Epest) > Eppara):
     
