@@ -19,7 +19,7 @@ def df2_dx2(x1,x2):
     return 1 + 5*x1
 
 
-x_old = np.array([1.3, 0.3])
+x_old = np.array([1.3 , 0.3])
 
 print("Valores iniciais: ", x_old)
 
