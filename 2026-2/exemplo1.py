@@ -2,13 +2,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 
-#valor verdadeiro
+#dados iniciais
+x = 1
+n = 6
 u = 2.71828182846
 
-#critério de parada
-n = 6
+
+
 Eppara = 0.5*10**(2-n)
 
+
+#série mclaurin
 print(Eppara)
 
 def serieMclarium(x,n):
