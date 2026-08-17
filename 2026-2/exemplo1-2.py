@@ -23,14 +23,19 @@ EPT = []
 EPEST = [100]
 v_old = 0
 
+i = 0 
+Eppara = 0.5*10**(2-n)
+Epest = 100
 
-for i in range(n):
+while Epest > Eppara:
+
     soma = soma + serieMclarium(x,i)
     v_new = soma
     Ept = np.abs((u - soma)/u)*100
 
     if i > 0:
         Epest = np.abs((v_new - v_old)/v_new)*100
+        erro = abs(v_new - v_old)
         EPEST.append(Epest)
 
     # Atualização
@@ -39,11 +44,17 @@ for i in range(n):
     estimativa.append(soma)
     contador.append(i)
 
-print(f"Para x = {x}")
+    i = i + 1
+
+print("Valor real =", u)
+print("Última estimativa =", estimativa[-1])
+print("Número de termos usados =", len(contador))
+print("Último erro =", erro)
 print(f"iteracoes: {i}")
 print(f"soma: {soma}")
 print(f"aproximacao: {v_new}")
 print(f"erro: {Ept}")
+
 
 plt.figure()
 plt.plot(contador,estimativa, 'or', label="$e^x$")
