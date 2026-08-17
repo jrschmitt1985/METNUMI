@@ -1,17 +1,20 @@
 import numpy as np
-import math
 import matplotlib.pyplot as plt
+import math
 
-# Dados Iniciais
+#dados iniciais
 x = 1
 n = 6
-u= math.exp(1)
+u = np.exp(x)
 
-# Série de MacLaurin
-def ex(x,n):
-    return x**n/math.factorial(n)
 
-#Pré-alocação
+#série mclaurin
+
+
+def serieMclarium(x,n):
+    return (x**n)/math.factorial(n)
+
+#peé-alocação de memória
 
 soma = 0
 estimativa = []
@@ -21,29 +24,32 @@ EPEST = [100]
 v_old = 0
 
 
-
 for i in range(n):
-    
-    soma = soma + ex(x,i) 
+    soma = soma + serieMclarium(x,i)
     v_new = soma
-    Ept = abs((u - soma)/u)*100
-    
+    Ept = np.abs((u - soma)/u)*100
+
     if i > 0:
-        Epest = abs((v_new - v_old)/v_new)*100
+        Epest = np.abs((v_new - v_old)/v_new)*100
         EPEST.append(Epest)
-        
+
     # Atualização
     v_old = v_new
-        
     EPT.append(Ept)
     estimativa.append(soma)
     contador.append(i)
 
+print(f"Para x = {x}")
+print(f"iteracoes: {i}")
+print(f"soma: {soma}")
+print(f"aproximacao: {v_new}")
+print(f"erro: {Ept}")
+
 plt.figure()
-plt.plot(contador,estimativa,'or',label="$e^x$")
+plt.plot(contador,estimativa, 'or', label="$e^x$")
 plt.legend()
-plt.xlabel("Número de termos")
-plt.ylabel("Estimativa")
+plt.xlabel("Numero de termos")
+plt.ylabel("estimativa")
 plt.grid()
 
 plt.figure()
@@ -55,5 +61,3 @@ plt.ylabel("E_{pt}$ (%)")
 plt.grid()
 
 plt.show()
-
-#TAREFA DE CASA FAZER O PROGRAMA PARAR ATÉ A SEXTA CASA DECIMAL USANDO WHILE
