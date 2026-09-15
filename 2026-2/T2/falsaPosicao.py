@@ -3,7 +3,7 @@ def falsaPosicao(f, xl, xu, Eppara):
     Epest = 100
     iteracao = 0
 
-    while Epest > Eppara:
+    while Epest >= Eppara:
         xr = xu - (f(xu) * (xl - xu)) / (f(xl) - f(xu))
         iteracao += 1
 

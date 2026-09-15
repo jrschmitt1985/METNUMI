@@ -3,7 +3,7 @@ def bisseccao(f, xl, xu, Eppara):
     Epest = 100
     iteracao = 0
 
-    while Epest >= Eppara:
+    while Epest > Eppara:
         xr = (xl + xu) / 2
         iteracao += 1
 

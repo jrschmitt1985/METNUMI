@@ -1,17 +1,11 @@
-def newtonRaphson(f, df, xi, Eppara, max_iter=1000):
+def newtonRaphson(f, df, xi, Eppara):
     Epest = 100
     iteracao = 0
 
-    while Epest > Eppara and iteracao < max_iter:
-        if df(xi) == 0:
-            raise ValueError("Derivada igual a zero.")
-
+    while Epest >= Eppara:
         xi_new = xi - f(xi) / df(xi)
         iteracao += 1
-
-        if xi_new != 0:
-            Epest = abs((xi_new - xi) / xi_new) * 100
-
+        Epest = abs((xi_new - xi) / xi_new) * 100
         xi = xi_new
 
     return xi, Epest, iteracao

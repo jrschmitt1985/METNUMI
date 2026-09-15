@@ -1,10 +1,10 @@
-def bisseccao(f, xl, xu, Eppara):
+def falsaPosicao(f, xl, xu, Eppara):
     xr_old = None
     Epest = 100
     iteracao = 0
 
-    while Epest >= Eppara:
-        xr = (xl + xu) / 2
+    while Epest > Eppara:
+        xr = xu - (f(xu) * (xl - xu)) / (f(xl) - f(xu))
         iteracao += 1
 
         if xr_old is not None:
