@@ -78,6 +78,16 @@ for c in range(3):
         xold = xnew.copy()
         k += 1
 
+    D = np.diag(np.diag(A))
+    L = np.tril(A, -1)
+    U = np.triu(A, 1)
+
+    T = -np.linalg.inv(D + L) @ U
+
+    autovalores = np.linalg.eigvals(T)
+    raio = max(abs(autovalores))
+
+    print("Raio espectral:", raio)
     print("Solucao com equacoes reorganizadas:")
     print(xnew)
     print("Numero de iteracoes:", k)
